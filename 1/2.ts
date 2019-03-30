@@ -13,8 +13,8 @@ let name4 = 'zhufneg';
 new String('zhufeng').toLocaleLowerCase();
 
 let hasGirl: boolean = true;
-hasGirl = Boolean(true);
-//hasGirl = new Boolean(true);
+hasGirl = Boolean(true); //基本类型✅
+//hasGirl = new Boolean(true);这个是对象类型,❌
 
 //联合类型
 let name5: string | number | boolean;
@@ -23,8 +23,12 @@ name5 = 10;
 
 //类型断言
 let name6: string | number | boolean;
-name6 = 'zhufeng';
-(name6 as string).length;
+// name6 = 'zhufeng';
+// name6.length ✅上面已经赋值了,可以用
+// // (name6 as string).length;✅类型断言
+// 类型“string | number | boolean”上不存在属性“length”。
+// 类型“number”上不存在属性“length”。
+// name6.length; ❌
 function getName6(val: string | number | boolean) {
   (val as string).length;
 }
